@@ -1,0 +1,135 @@
+
+/* Problem Name is &&& Deque &&& PLEASE DO NOT REMOVE THIS LINE. */
+/**
+ * Instructions:
+ *
+ *  1) Implement a double-ended queue (abbreviated to deque) that stores strings. 
+ *     A deque is a data structure that has characteristics of both a queue and a stack. Elements can be added or removed from either the front or back.
+ * 
+ *  2) Consider adding some additional tests in doTestsPass()
+ */
+public class Solution {​
+  static class Node<String> {​
+    String item;
+    Node<String> prev;
+    Node<String> next;
+    public Node (String item, Node<String> prev, Node<String> next){​
+      this.item = item;
+      this.prev = prev;
+      this.next = next;
+    }​
+  }​
+  static class Deque {​
+    int size = 0 ;
+    Node<String> first;
+    Node<String> last;
+    Deque()
+    {​
+    }​
+    public void addFirst(String data) {​
+      Node<String> start = first;
+      Node<String> newNode = new Node(data,null,first);
+      first = newNode;
+      if(start == null)
+        last = newNode;
+      else
+        start.prev = newNode;
+      size++;
+      // throw new RuntimeException("method not implemented");
+    }​
+    public void addLast(String data) {​
+      Node<String> l = last;
+      Node<String> newNode = new Node(data,l,null);
+      last = newNode;
+      if(l == null)
+        first = newNode;
+      else
+        l.next = newNode;
+      size++;
+      // throw new RuntimeException("method not implemented");
+    }​
+    public String removeFirst() {​
+      Node<String> node = first;
+      if(node == null)
+      {​
+        return "No element is exist";
+      }​
+      String data = node.item;
+      Node<String> nextNode = node.next;
+      first.next = null;
+      first = nextNode;
+      if(nextNode == null)
+        last = null;
+      else
+        nextNode.prev = null;
+      size--;
+      return data;
+      // throw new RuntimeException("method not implemented");
+    }​
+    public String removeLast() {​
+      Node<String> node = last;
+      if(node == null)
+      {​
+        return "No element is exist";
+      }​
+      String data = node.item;
+      Node<String> prevNode = node.prev;
+      last.prev = null;
+      last = prevNode;
+      if(prevNode == null)
+        first = null;
+      else
+        prevNode.next = null;
+      size--;
+      return data;
+      // throw new RuntimeException("method not implemented");
+    }​
+    public String peekFirst() {​
+      Node<String> node = first;
+      if(node==null)
+        return null;
+      return node.item;
+      // throw new RuntimeException("method not implemented");
+    }​
+    public String peekLast() {​
+      Node<String> node = last;
+      if(node==null)
+        return null;
+      return node.item;
+      // throw new RuntimeException("method not implemented");
+    }​
+    public int size() {​
+      return size;
+      // throw new RuntimeException("method not implemented");
+    }​
+  }​
+  public static void main(String[] args) {​
+    try {​
+      doTestsPass();
+      System.out.println("All tests passed");
+    }​ catch (Exception ex) {​
+      System.out.println("Test failed");
+      ex.printStackTrace();
+    }​
+  }​
+  private static void doTestsPass() throws Exception {​
+    final Deque deque = new Deque();
+    // enqueue
+    deque.addLast("a");
+    deque.addLast("b");
+    assertTrue(deque.size() == 2, "Test failed, size should be 2");
+    assertTrue("a".equals(deque.peekFirst()), "First element should be 'a'");
+    deque.removeFirst();
+    assertTrue("b".equals(deque.peekFirst()), "First element should be 'b'");
+    assertTrue(deque.size() == 1, "Test failed, size should be 2");
+    deque.removeFirst();
+    assertTrue(null == deque.peekFirst(), "First element should be 'b'");
+    //TODO: add your test cases here
+  }​;
+  private static void assertTrue(boolean condition, String message)
+      throws Exception {​
+    if (!condition)
+      throw new Exception(message);
+  }​
+}​
+
