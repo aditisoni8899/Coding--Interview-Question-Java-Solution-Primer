@@ -1,7 +1,7 @@
 # Coding--Interview-Question-Java-Solution-Primer
 **One stop place if you are looking to have java coding interview questions as well as solutions.**
 
-* [Deque Implementation | GoldMann Sach](Interview-Coding-Question's/DequeImplementation_GoldMannSach)
+* [Deque Implementation | GoldMann Sach](DequeImplementation_GoldMannSach)
 * [Interactive Coding Challenges](https://github.com/donnemartin/interactive-coding-challenges)
 * [System Design Primer | Architecture based question](https://github.com/donnemartin/system-design-primer)
 * [All Sorting Algorithms](https://github.com/diptangsu/Sorting-Algorithms/tree/master/Java)
