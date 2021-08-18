@@ -1,3 +1,7 @@
+/* Given a array of strings, create group of anagram strings
+* input {stop,spot,ate,final,eat}
+* output {{stop,spot},{final},{eat,ate}}
+* */
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
