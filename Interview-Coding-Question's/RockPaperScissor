@@ -1,0 +1,150 @@
+Interview Questions from previous call -- tdd
+        1. How you pair with your developers and team?
+        2. what tools you use for testing?
+        3. Experience with frontend?
+        4. Your participation in architecture process?
+        5. What you like and dislike about Scrum (Agile)?
+        6. How you deal with impossible deadline at work?
+        7.Experience with CI/CD?
+
+
+
+        Java code 1
+        System.out.println("Player 1: Choose (1)
+        -
+        Rock, (2)
+        -
+        Scissors, or (3)
+        -
+        Paper: ");
+        int player1 = scan.nextInt();
+        System.out.println("Player 2: Choose (1)
+        -
+        Rock, (2)
+        -
+        Scissors, or (3)
+        -
+        Paper: ");
+        int player2 = scan.nextInt();
+        if (player1 == player2)
+        {
+        System.out.print("It is a tie");
+        } else {
+        swi
+        tch (player1){
+        case ROCK:
+        if (player2 == SCISSOR)
+        System.out.print("Player 1 wins!");
+        else
+        System.out.print("Player 2 wins!");
+        break;
+        case SCISS
+        OR:
+        if (player2 == PAPER)
+        System.out.print("Player 1 wins!");
+        else
+        System.out.print("Player 2 wins!");
+        break;
+        case PAPER:
+        if (player2 == ROC
+        K)
+        System.out.print("Player 1 wins!");
+        else
+        System.out.print("Player 2 wins!");
+        break;
+        }
+        }
+        Java Code 2
+        Text
+@Test
+public void test1() {
+        System.out.println("Fixed Tests Player 1 won!");
+        assertEquals("Player 1 won!", RPS.rps("rock", "scissors"));
+        assertEquals("Player 1 won!", RPS.rps("scissors", "paper"));
+        assertEquals("Player 1 won!"
+        , RPS.rps("paper", "rock"));
+        }
+@Test
+public void test2() {
+        System.out.println("Fixed Tests Player 2 won!");
+        assertEquals("Player 2 won!", RPS.rps("scissors", "rock"));
+        assertEquals("Player 2 won!", RPS.rps("paper", "scis
+        sors"));
+        assertEquals("Player 2 won!", RPS.rps("rock", "paper"));
+        }
+@Test
+public void test3() {
+        System.out.println("Fixed Tests Draw!");
+        assertEquals("Draw!", RPS.rps("scissors", "scissors"));
+        assertEquals("Draw!
+        ", RPS.rps("paper", "paper"));
+        assertEquals("Draw!", RPS.rps("rock", "rock"));
+        }
+        Java Code 3
+@Test
+public void test1() {
+        System.out.println("Fixed Tests Player 1 won!");
+        assertEquals("Player 1 won!", RPS.rps("rock", "scissors"));
+        assertEquals("Player 1 won!", RPS.rps("scissors", "paper"));
+        assertEquals("Player 1 won!", RPS.rps("paper", "rock"));
+        }
+@Test
+public void test2() {
+        Syst
+        em.out.println("Fixed Tests Player 2 won!");
+        assertEquals("Player 2 won!", RPS.rps("scissors", "rock"));
+        assertEquals("Player 2 won!", RPS.rps("paper", "scissors"));
+        assertEquals("Player 2 won!", RPS.rps("rock", "paper"));
+        }
+@Test
+public void test3() {
+        System.out.println("Fixed Tests Draw!");
+        assertEquals("Draw!", RPS.rps("scissors", "scissors"));
+        assertEquals("Draw!", RPS.rps("paper", "paper"));
+        assertEquals("Draw!", RPS.rps("rock", "rock"
+        ));
+        }
+        Java code 4
+        System.out.println("Player 1: Choose (1)
+        -
+        Rock, (2)
+        -
+        Scissors, or (3)
+        -
+        Paper: ");
+        int player1 = scan.nextInt();
+        System.out.println("Player 2: Choose (1)
+        -
+        Rock, (2)
+        -
+        Scissors, or (3)
+        -
+        Paper: ");
+        in
+        t player2 = scan.nextInt();
+        if (player1 == player2)
+        {
+        System.out.print("It is a tie");
+        } else {
+        switch (player1){
+        case ROCK:
+        if (player2 == SCISSOR)
+        System.out.print("Player 1 wins!");
+        else
+        System.out.print("Player 2 wins!");
+        break;
+        case SCISSOR:
+        if (player2 == PAP
+        ER)
+        System.out.print("Player 1 wins!");
+        else
+        System.out.print("Player 2 wins!");
+        break;
+        case PAPER:
+        if (player2 == ROCK)
+        System.out.prin
+        t("Player 1 wins!");
+        else
+        System.out.print("Player 2 wins!");
+        break
+
