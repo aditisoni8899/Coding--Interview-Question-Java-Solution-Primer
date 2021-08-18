@@ -1,0 +1,56 @@
+Given a string expression (consisting of + - ( ) operands), evaluate the expression
+1 + (10 - 4) -2  = 5
+
+1 + 10 -2  = 7
+public int evaluate(String expr) {
+    Stack<Integer> digits = new Stack<>();
+    Stack<Character> parenthesis = new Stack<>();
+    char[] ex = expr.toCharArray();
+    for(int i=0;i<ex.length;i++)
+    {
+        if(ex[i]== ' ')
+            continue;
+
+        if(ex[i]=='(')
+            parenthesis.push(ex[i]);
+
+        else if(ex[i]==')')
+        {
+            while(parenthesis.peek() != '(')
+            {
+                int num1=digits.pop();
+                int num2 = digits.pop();
+                char ch = parenthesis.pop();
+                if(ch == '+')
+                digits.push(num1+num2);
+                else
+                digits.push(num1-num2);
+            }
+            parenthesis.pop();
+        }
+        else if(ex[i]=='+' || ex[i] == '-')
+        {
+            while(!parenthesis.empty())
+            {
+                int num1=digits.pop();
+                int num2 = digits.pop();
+                char ch = parenthesis.pop();
+                if(ch == '+')
+                digits.push(num1+num2);
+                else
+                digits.push(num1-num2);
+            }
+            parenthesis.push(ex[i]);
+        }
+        else if(ex[i] >= '0' && ex[i] <= '9')
+        {
+            String res = "";
+            while(i < ex.length && ex[i] >= '0' && ex[i] <= '9')
+            res += ex[i];
+            int res1= Integer.parseInt(res);
+            digits.push(res1);
+            i--;
+        }
+    }
+    return digits.pop();
+}
