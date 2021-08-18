@@ -1,0 +1,50 @@
+/*
+Given an array and an item, find the occurence of that item in the array
+ */
+
+public class CountOccurrence {
+    public static int countOccurrenceUsingBinarySearch(int[] arr, int target) {
+        int firstIndex = findFirstPosition(arr, target);
+        int lastIndex = findLastPosition(arr, target);
+        return (lastIndex - firstIndex) + 1;
+    }
+    public static int findFirstPosition(int arr[], int target) {
+        int start = 0;
+        int end = arr.length - 1;
+        int index = -1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (arr[mid] == target) {
+                index = mid;
+                end = mid - 1;
+            } else if (arr[mid] > target) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return index;
+    }
+    public static int findLastPosition(int arr[], int target) {
+        int start = 0;
+        int end = arr.length - 1;
+        int index = -1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (arr[mid] == target) {
+                index = mid;
+                start = mid + 1;
+            } else if (arr[mid] > target) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return index;
+    }
+    public static void main(String[] args) {
+        int arr[] = { 1, 4, 7, 8, 8, 11, 11, 11, 11, 12, 13 };
+        int search = 11;
+        System.out.println(countOccurrenceUsingBinarySearch(arr, search));
+    }
+}

@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+/*
+ * To execute Java, please define "static void main" on a class
+ * named Solution.
+ *
+ * If you need more classes, simply define them inline.
+ */
+public class Solution {
+    /**
+     * Example Test Case
+     */
+    @Test
+    public void testNoop() {
+        Solution s = new Solution();
+        Assert.assertTrue(s.checkStrings("aabc","baac"));
+        Assert.assertFalse(s.checkStrings("aabc","badcec"));
+        Assert.assertFalse(s.checkStrings("aabc","abbc"));
+        Assert.assertFalse(s.checkStrings("","badcec"));
+        Assert.assertTrue(s.checkStrings("",""));
+        Assert.assertTrue(s.checkStrings(null,null));
+        // Assert.assertFalse(s.checkStrings("abd",null));
+    }
+    public boolean checkStrings(String str1, String str2)
+    {
+        if(str1==null && str2==null)
+            return true;
+        else if(str1==null || str2==null)
+            return false;
+        if(!(str1.length() == str2.length()))
+            return false;
+        char[] ch1 = str1.toCharArray();
+        char[] ch2 = str2.toCharArray();
+        Arrays.sort(ch1);
+        Arrays.sort(ch2);
+        for(int i=0;i<str1.length();i++)
+        {
+            if(ch1[i]!=ch2[i])
+                return false;
+        }
+        return true;
+
+    }
+    public static void main(String[] args) {
+//     ArrayList<String> strings = new ArrayList<String>();
+//     strings.add("Hello, World!");
+//     strings.add("Welcome to CoderPad.");
+//     strings.add("This pad is running Java " + Runtime.version().feature());
+//     for (String string : strings) {
+//       System.out.println(string);
+//     }
+
+//     // run unit tests
+        JUnitCore.main("Solution");
+        Solution s = new Solution();
+        System.out.println(s.checkStrings("aabc","abbc"));
+        System.out.println(s.checkStrings("aabc","badec"));
+    }
+}
