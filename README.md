@@ -3,6 +3,8 @@
 
 * [SQL vs NoSQL](#sql-vs-nosql)
 
+* [JAVA OOPS](Java-README.md)
+
 * [Deque Implementation | GoldMann Sach](Interview-Coding-Question's/DequeImplementation_GoldMannSach)
 * [Interactive Coding Challenges](https://github.com/donnemartin/interactive-coding-challenges)
 * [System Design Primer | Architecture based question](https://github.com/donnemartin/system-design-primer)
@@ -26,6 +28,7 @@
 * [Given two arrays, find the missing element in the second Array](Interview-Coding-Question's/FirstMissingElementInTwoArrays)
 * [Sort HashMap Java Implementation](Interview-Coding-Question's/Sort-HashMap-Java) 
 * [Rock-Paper-Scissor | VMWawre](Interview-Coding-Question's/RockPaperScissor)
+* [String Expression - Balanced-Brackets](Interview-Coding-Question's/BalancedBrackets-StringExpression)
 
  #### Java Spring Boot Flow Architecutre
 >![No Preview Available](images/Spring-Boot-flow-architecture.jpg)
